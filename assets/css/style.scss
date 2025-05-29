@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue";
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+@import "./components/variable";
+
+.navToggle {
+    right: 0;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    padding: $m-padding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $primaryColor;
+    transition: transform 0.3s ease;
+    opacity: 1;
+    z-index: 1000;
+
+    @include logo;
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        .menuButton {
+            width: 2rem;
+            text-align: right;
+            color: white;
+        }
+    }
+
+    nav ul {
+        display: none;
+        align-items: center;
+        gap: 1rem;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        a {
+            position: relative;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.2rem 0rem;
+        }
+
+        a::after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 2px;
+            background: white;
+            bottom: 0;
+            left: 0;
+            border-radius: 1rem;
+            transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        @include button;
+
+        .dropdown-list {
+            position: relative;
+            height: 60px;
+            align-content: center;
+
+            a {
+                cursor: pointer;
+            }
+
+            a::after {
+                display: none;
+            }
+
+            .dropdown {
+                position: absolute;
+                width: 150px;
+                height: fit-content;
+                padding: 0.5rem 0rem;
+                display: block;
+                opacity: 0;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $secColor;
+                border-radius: 0.5rem;
+                transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+                pointer-events: none;
+
+                li {
+                    padding: 0.5rem;
+                    text-align: center;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.498);
+                    // background: $secColor;
+                    white-space: nowrap;
+                }
+
+                li:nth-last-child(1) {
+                    border: none;
+                }
+            }
+        }
+
+        .dropdown-list:hover .dropdown {
+            pointer-events: auto;
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+}
+
+@import "./components/index";
+@import "./components/login";

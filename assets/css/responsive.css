@@ -1,0 +1,115 @@
+@media only screen and (min-width: 1020px) {
+  header {
+    padding: 0rem 5rem;
+  }
+  header nav ul {
+    position: static;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+  }
+  header nav .menuButton {
+    display: none;
+    transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  section {
+    padding: 0rem 5rem;
+  }
+  section aside {
+    width: 50%;
+  }
+  #hero {
+    height: calc(100% - 60px);
+    padding: 0rem 5rem;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  #hero .contentSide {
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    padding: 2rem 0rem;
+  }
+  #hero .contentSide h1 {
+    font-size: 3rem;
+  }
+  #hero .imgSide {
+    height: 100%;
+    padding: 0rem 4rem;
+    align-content: end;
+  }
+  #hero .imgSide img {
+    width: 90%;
+    height: 90%;
+    float: right;
+  }
+  #des {
+    flex-wrap: nowrap;
+    height: 10rem;
+  }
+  #des .desContent {
+    width: 25%;
+    background: transparent;
+    border-radius: 0;
+  }
+  #about {
+    flex-direction: row;
+    gap: 0;
+  }
+  #about .imgSide .imageBox {
+    width: 500px;
+    height: 500px;
+  }
+  #about .contentSide h2, #about .contentSide p {
+    text-align: left;
+  }
+  #about .contentSide .btnContainer {
+    flex-direction: row;
+  }
+  #courses {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0rem 5rem;
+  }
+  #courses .card {
+    width: 25%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #contact {
+    width: 60%;
+    padding: 0rem 5rem;
+  }
+  #contact .imgSide {
+    display: flex;
+  }
+  #contact .contentSide {
+    width: 50%;
+  }
+  footer {
+    height: 350px;
+  }
+  footer .container {
+    flex-direction: row;
+    padding: 2rem 5rem;
+    gap: 0;
+  }
+  footer .container .dets {
+    width: 25%;
+  }
+  footer .container .dets .quickLinks h3 {
+    text-align: left;
+  }
+  footer .container .dets .quickLinks li {
+    width: 95%;
+    margin: 0.8rem 0rem;
+  }
+  #loginContainer form {
+    width: 50%;
+    padding: 2rem 4rem;
+  }
+}

@@ -1,0 +1,819 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue";
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navToggle {
+  right: 0;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #5409DA;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  z-index: 1000;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+header .logo h2 {
+  font-size: 1.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav .menuButton {
+  width: 2rem;
+  text-align: right;
+  color: white;
+}
+header nav ul {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+header nav ul a {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.2rem 0rem;
+}
+header nav ul a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+header nav ul a:hover::after {
+  width: 100%;
+}
+header nav ul button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+header nav ul button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+header nav ul button:hover::after {
+  left: 0;
+}
+header nav ul .dropdown-list {
+  position: relative;
+  height: 60px;
+  align-content: center;
+}
+header nav ul .dropdown-list a {
+  cursor: pointer;
+}
+header nav ul .dropdown-list a::after {
+  display: none;
+}
+header nav ul .dropdown-list .dropdown {
+  position: absolute;
+  width: 150px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5rem 0rem;
+  display: block;
+  opacity: 0;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4E71FF;
+  border-radius: 0.5rem;
+  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  pointer-events: none;
+}
+header nav ul .dropdown-list .dropdown li {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.498);
+  white-space: nowrap;
+}
+header nav ul .dropdown-list .dropdown li:nth-last-child(1) {
+  border: none;
+}
+header nav ul .dropdown-list:hover .dropdown {
+  pointer-events: auto;
+  opacity: 1;
+  z-index: 1;
+}
+
+header nav ul {
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  top: 60px;
+  right: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #5409DA;
+  z-index: 999;
+}
+
+main {
+  width: 100%;
+}
+main section {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main section aside {
+  width: 100%;
+  height: 100%;
+  padding: 0rem 1rem;
+}
+
+#hero {
+  padding: 2rem 0rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex-direction: column-reverse;
+  gap: 0;
+}
+#hero .contentSide {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+#hero .contentSide small {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
+}
+#hero .contentSide small i {
+  font-size: 0.5rem;
+  color: #5409DA;
+}
+#hero .contentSide h1 {
+  font-size: 2rem;
+  letter-spacing: -2px;
+}
+#hero .contentSide p {
+  opacity: 70%;
+  margin-bottom: 1rem;
+}
+#hero .contentSide button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+#hero .contentSide button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#hero .contentSide button:hover::after {
+  left: 0;
+}
+#hero .imgSide {
+  padding: 0rem 4rem;
+  align-content: end;
+}
+#hero .imgSide img {
+  width: 100%;
+  aspect-ratio: 3/4;
+}
+
+#des {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  background: #4E71FF;
+}
+#des .desContent {
+  text-align: center;
+  color: white;
+  padding: 1rem 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.564);
+  background: rgba(255, 255, 255, 0.126);
+  border-radius: 1rem;
+}
+#des .desContent h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#des .desContent h3 {
+  font-weight: 400;
+}
+#des .desContent:nth-last-child(1) {
+  border: none;
+}
+#des .desContent:hover h1 {
+  scale: 1.2;
+  color: gold;
+}
+
+.title {
+  text-align: center;
+  margin: 3rem 0rem;
+}
+
+#about {
+  margin-bottom: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+#about .imgSide .imageBox {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  box-shadow: -15px 15px 0px #5409DA;
+  border-radius: 2rem;
+  background: #4E71FF;
+  overflow: hidden;
+}
+#about .imgSide .imageBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.425));
+}
+#about .imgSide .imageBox::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 150px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, #4E71FF, transparent);
+}
+#about .contentSide h2,
+#about .contentSide p {
+  text-align: center;
+}
+#about .contentSide p {
+  margin: 1rem 0rem;
+  opacity: 70%;
+}
+#about .contentSide ul {
+  margin-top: 1rem;
+}
+#about .contentSide ul li {
+  margin: 0.5rem;
+  display: flex;
+  gap: 0.2rem;
+}
+#about .contentSide ul li i {
+  color: #4E71FF;
+}
+#about .contentSide .btnContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+#about .contentSide .btnContainer button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+#about .contentSide .btnContainer button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#about .contentSide .btnContainer button:hover::after {
+  left: 0;
+}
+
+.courseContainer .title {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 4rem auto;
+}
+
+#courses {
+  padding: 0rem 1rem;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 2rem;
+}
+#courses .card {
+  width: 85%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.484);
+}
+#courses .card img {
+  width: 95%;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#courses .card .courseDetails {
+  width: 100%;
+  padding: 0rem 0.5rem;
+}
+#courses .card .courseDetails h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+#courses .card .courseDetails h3 i {
+  font-size: 0.5rem;
+  color: #5409DA;
+}
+#courses .card .courseDetails ul {
+  margin: 1rem 0rem;
+}
+#courses .card .courseDetails ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.2rem;
+}
+#courses .card .courseDetails ul li i {
+  font-size: 0.8rem;
+  color: #5409DA;
+}
+#courses .card .courseDetails .priceSec {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#courses .card .courseDetails .priceSec button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+#courses .card .courseDetails .priceSec button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#courses .card .courseDetails .priceSec button:hover::after {
+  left: 0;
+}
+#courses .card:hover img {
+  scale: 1.01;
+}
+
+#contact {
+  width: 90%;
+  height: 400px;
+  padding: 0rem 1rem;
+  background: #5409DA;
+  border-radius: 1rem;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+#contact .imgSide {
+  display: none;
+  width: 50%;
+  height: 100%;
+}
+#contact .imgSide img {
+  width: 95%;
+  height: 100%;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.34));
+}
+#contact .contentSide {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+#contact .contentSide form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+#contact .contentSide form input,
+#contact .contentSide form textarea {
+  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+#contact .contentSide form .gender {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#contact .contentSide form .gender div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#contact .contentSide form .gender div label {
+  color: white;
+}
+#contact .contentSide form .gender div input {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#contact .contentSide form button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+#contact .contentSide form button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#contact .contentSide form button:hover::after {
+  left: 0;
+}
+#contact .contentSide form button {
+  margin-top: 2rem;
+}
+
+footer {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 1rem;
+  background: rgb(0, 0, 63);
+  color: white;
+}
+footer .container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+footer .container .dets {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+footer .container .dets .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .container .dets .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+footer .container .dets .logo h2 {
+  font-size: 1.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+footer .container .dets p {
+  opacity: 70%;
+}
+footer .container .dets .socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  float: left;
+}
+footer .container .dets .socialLinks li a {
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+footer .container .dets .socialLinks li a:hover {
+  transform: scale(1.2);
+}
+footer .container .dets .socialLinks li a.facebook:hover {
+  color: #1877F2;
+}
+footer .container .dets .socialLinks li a.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .container .dets .socialLinks li a.youtube:hover {
+  color: #FF0000;
+}
+footer .container .dets .socialLinks li a.twitter:hover {
+  color: #000000;
+}
+footer .container .dets .quickLinks h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+footer .container .dets .quickLinks li {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.8rem auto;
+}
+footer .container .dets .quickLinks li a {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+}
+footer .container .app {
+  background: rgba(255, 255, 255, 0.116);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+footer .container .app div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+footer .container .app div i {
+  color: rgb(0, 255, 0);
+}
+footer .container .app:hover {
+  cursor: pointer;
+  scale: 1.02;
+}
+footer .copyrights {
+  padding: 0.8rem;
+  text-align: center;
+  opacity: 50%;
+}
+
+#loginContainer {
+  width: 100%;
+  height: 100%;
+  padding: 0rem 1rem;
+  align-content: center;
+  background: #5409DA;
+}
+#loginContainer form {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2rem;
+  margin: auto;
+  /* From https://css.glass */
+  background: rgba(86, 9, 218, 0.687);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.221);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgb(84, 9, 218);
+}
+#loginContainer form .formTitle {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loginContainer form .formTitle h3 {
+  position: absolute;
+  left: 0;
+  transition: 0.2s all ease;
+}
+#loginContainer form .formTitle h3:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
+#loginContainer form .dataContainer {
+  width: 100%;
+  margin: 2rem 0rem;
+}
+#loginContainer form .dataContainer input {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  transition: 0.2s all ease;
+}
+#loginContainer form .dataContainer input::-moz-placeholder {
+  color: white;
+}
+#loginContainer form .dataContainer input::placeholder {
+  color: white;
+}
+#loginContainer form .dataContainer input:focus {
+  padding-bottom: 0.8rem;
+}
+#loginContainer form .dataContainer .passwordContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#loginContainer form .dataContainer .passwordContainer .passToggle {
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#loginContainer form .loginBtn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#loginContainer form .loginBtn-container button {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background: #4E71FF;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+#loginContainer form .loginBtn-container button::after {
+  position: absolute;
+  content: "Click now";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  align-content: center;
+  background: #8DD8FF;
+  color: #5409DA;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#loginContainer form .loginBtn-container button:hover::after {
+  left: 0;
+}
