@@ -4,7 +4,6 @@ loginToHomeButton.addEventListener("click", () => {
 });
 
 const password = document.querySelector("#password");
-const confirmPass = document.querySelector("#confirmPass");
 const passToggle = document.querySelector(".passToggle i");
 
 passToggle.addEventListener("click", ()=> {

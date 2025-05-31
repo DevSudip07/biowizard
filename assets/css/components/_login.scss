@@ -74,6 +74,15 @@
                     cursor: pointer;
                 }
             }
+
+            .alert {
+                // color: red;
+                display: none;
+            }
+
+            #otp {
+                display: none;
+            }
         }
 
         .loginBtn-container {

@@ -15,21 +15,26 @@
 
 <body>
     <section id="loginContainer">
-        <form id="loginForm" action="">
+        <form id="signupForm" action="">
             <div class="formTitle">
                 <h3 class="loginBackBtn"><i class="fa-solid fa-arrow-left"></i></h3>
-                <h1>Login Now</h1>
+                <h1>Sign Up</h1>
             </div>
             <div class="dataContainer">
+                <input id="name" type="text" placeholder="Enter your name">
+                <input id="number" type="number" placeholder="Enter your number">
                 <input id="email" type="email" placeholder="Enter your email">
                 <div class="passwordContainer">
                     <input id="password" type="password" placeholder="Enter your password">
                     <h3 class="passToggle"><i class="fa-solid fa-eye"></i></h3>
                 </div>
+                <input id="conPassword" type="password" placeholder="Confirm your password">
+                <small class="alert">Please enter same password</small>
+                <input id="otp" type="number" placeholder="Enter OTP">
             </div>
             <div class="loginBtn-container">
-                <button class="loginButton">Login</button>
-                <h5>Already don't have an account ? <a href="./signup.html">Sign up</a></h5>
+                <button class="signupButton">Sign Up</button>
+                <h5>Already have an account ? <a href="./login.html">Login</a></h5>
             </div>
         </form>
     </section>
@@ -37,7 +42,8 @@
     <!-- ======= GSAP ======= -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <!-- ======= CUSTOM JS ======= -->
-    <script src="../assets/js/modules/form.js"></script>
+    <script src="../assets/js/modules/signUp.js"></script>
+    <!-- <script src="../assets/js/modules/form.js"></script> -->
     <!-- <script type="module" src="../assets/js/script.js"></script> -->
 </body>
 
